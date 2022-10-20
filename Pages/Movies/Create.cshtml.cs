@@ -30,11 +30,14 @@ namespace RazorPagesMovie.Pages.Movies
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+        //   If there are no model errors:
           if (!ModelState.IsValid)
             {
                 return Page();
             }
 
+            // The data is saved.
+            // The browser is redirected to the Index page.  
             _context.Movie.Add(Movie);
             await _context.SaveChangesAsync();
 
